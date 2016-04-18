@@ -1,0 +1,16 @@
+*.exe
+*.manifest
+Bicycle/obj/Debug/Bicycle.csprojResolveAssemblyReference.cache
+*.suo
+Bicycle/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+Bicycle/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+Bicycle/Properties/AssemblyInfo.cs
+Bicycle/obj/Debug/Bicycle.pdb
+Bicycle/bin/Debug/Bicycle.vshost.exe.config
+Bicycle/obj/Debug/Bicycle.csproj.FileListAbsolute.txt
+*.cache
+Bicycle/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
+*.config
+Bicycle/Bicycle.csproj
+Bicycle.sln
+Bicycle/bin/Debug/Bicycle.pdb

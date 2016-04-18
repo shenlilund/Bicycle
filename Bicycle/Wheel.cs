@@ -9,6 +9,6 @@ namespace Bicycle
     class Wheel
     {
         int diameter;
-        String tireType;
+        string tireType;
     }
 }

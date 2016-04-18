@@ -10,5 +10,11 @@ namespace Bicycle
     {
         int diameter;
         string tireType;
+
+        public Wheel(int d, string t)
+        {
+            diameter = d;
+            tireType = t;
+        }
     }
 }

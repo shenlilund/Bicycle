@@ -8,5 +8,6 @@ namespace Bicycle
 {
     class Cruiser
     {
+        bool basket;
     }
 }

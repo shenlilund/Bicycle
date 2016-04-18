@@ -6,8 +6,28 @@ using System.Threading.Tasks;
 
 namespace Bicycle
 {
-    class Cruiser
+    class Cruiser : Bicycle
     {
-        bool basket;
+        private bool basket;
+
+        public Cruiser(bool b, Wheel w1, Wheel w2, string c) : base(w1, w1, c)
+        {
+            this.basket = b;
+        }
+
+        public void displayBike()
+        {
+            Console.WriteLine("This is a cruiser bicycle");
+            if (basket == true)
+            {
+                Console.WriteLine("This bike has a basket");
+            }
+            else
+            {
+                Console.WriteLine("This bike doesn't have a basket");
+            }
+            base.displayBike();
+            
+        }
     }
 }

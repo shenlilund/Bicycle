@@ -8,9 +8,9 @@ namespace Bicycle
 {
     class Bicycle
     {
-        Wheel wheel1;
-        Wheel wheel2;
-        string color;
+        private Wheel wheel1;
+        private Wheel wheel2;
+        private string color;
 
         public Bicycle(Wheel w1, Wheel w2, string c)
         {
@@ -19,8 +19,20 @@ namespace Bicycle
             color = c;
         }
 
+        public void displayBike()
+        {
+            Console.WriteLine("This bike is " + color);
+            Console.WriteLine("It has the following wheels: ");
+            Console.Write("Wheel 1: ");
+            wheel1.displayWheel();
+            Console.Write("\nWheel 2: ");
+            wheel2.displayWheel();
+        }   
+
         static void Main(string[] args)
         {
+            Bicycle bike = null;
+
             //get the type of bicycle from user input
             string bikeType = "";
             int bikeTypeInt = 0;
@@ -33,13 +45,17 @@ namespace Bicycle
                 }
                 else
                 {
-                    Console.Clear();
                     Console.WriteLine("Please type 1, 2, or 3 \r\n");
                 }
 
-                Console.WriteLine("What type of Bicycle do you want? \r\n 1. Mountain Bike \r\n 2. Cruiser \r\n 3. BMX");
+                Console.WriteLine("What type of Bicycle do you want? \r\n 1. Mountain Bike \r\n 2. Cruiser");
                 bikeType = Console.ReadLine();
             }
+
+            //get the color of the bike
+            Console.Clear();
+            Console.WriteLine("Enter the color of the bike: ");
+            string color = Console.ReadLine();
 
             //get the wheel diameter from user input
             String wheelSize = "";
@@ -53,7 +69,6 @@ namespace Bicycle
                 }
                 else
                 {
-                    Console.Clear();
                     Console.WriteLine("Error, please type a number: ");
                 }
 
@@ -62,7 +77,7 @@ namespace Bicycle
             }
 
             //get the tire type
-            Console.Clear();
+     
             Console.WriteLine("Enter the tire type: ");
             string tire = Console.ReadLine();
 
@@ -71,16 +86,59 @@ namespace Bicycle
 
             if (bikeTypeInt == 1)
             {
+                //get the number of gears for mountain bike
+                string gears = "";
+                int gearsInt = 0;
+                int flag = 1;
+                while (!(Int32.TryParse(gears, out gearsInt)))
+                {
+                    if (flag == 1)
+                    {
+                        flag = 0;
+                    }
+                    else
+                    {                    
+                        Console.WriteLine("Please type a number");
+                    }
 
+                    Console.WriteLine("How many gears does this mountain bike have?");
+                    gears = Console.ReadLine();
+                }
+
+                bike = new MountainBike(gearsInt, w1, w2, color);
             }
             else if (bikeTypeInt == 2)
             {
-                
-            }
-            else if (bikeTypeInt == 3)
-            {
+                //see if the cruiser bike has a basket or not
+                string basket = "";
+                int flag = 1;
+                while (!(basket == "true" || basket == "false"))
+                {
+                    if (flag == 1)
+                    {
+                        flag = 0;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please type true or false");
+                    }
 
+                    Console.WriteLine("Does this bike have a basket?");
+                    basket = Console.ReadLine();
+                }
+                bool b;
+                if (basket == "true")
+                {
+                    b = true;
+                }
+                else
+                {
+                    b = false;
+                }
+                bike = new Cruiser(b, w1, w2, color);
             }
+
+            bike.displayBike();
 
             //User hits enter to close the program.
             Console.ReadLine();

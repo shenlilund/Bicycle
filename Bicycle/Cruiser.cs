@@ -15,7 +15,7 @@ namespace Bicycle
             this.basket = b;
         }
 
-        public void displayBike()
+        public override void displayBike()
         {
             Console.WriteLine("This is a cruiser bicycle");
             if (basket == true)

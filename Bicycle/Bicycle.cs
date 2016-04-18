@@ -19,7 +19,7 @@ namespace Bicycle
             color = c;
         }
 
-        public void displayBike()
+        public virtual void displayBike()
         {
             Console.WriteLine("This bike is " + color);
             Console.WriteLine("It has the following wheels: ");
@@ -53,7 +53,6 @@ namespace Bicycle
             }
 
             //get the color of the bike
-            Console.Clear();
             Console.WriteLine("Enter the color of the bike: ");
             string color = Console.ReadLine();
 
@@ -112,7 +111,7 @@ namespace Bicycle
                 //see if the cruiser bike has a basket or not
                 string basket = "";
                 int flag = 1;
-                while (!(basket == "true" || basket == "false"))
+                while (!(basket == "yes" || basket == "no"))
                 {
                     if (flag == 1)
                     {
@@ -120,14 +119,14 @@ namespace Bicycle
                     }
                     else
                     {
-                        Console.WriteLine("Please type true or false");
+                        Console.WriteLine("Please type yes or no");
                     }
 
                     Console.WriteLine("Does this bike have a basket?");
                     basket = Console.ReadLine();
                 }
                 bool b;
-                if (basket == "true")
+                if (basket == "yes")
                 {
                     b = true;
                 }

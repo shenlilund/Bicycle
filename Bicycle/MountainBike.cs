@@ -15,7 +15,7 @@ namespace Bicycle
             numGears = gears;
         }
 
-        public void displayBike()
+        public override void displayBike()
         {
             Console.WriteLine("This is a mountain bicycle");
             Console.WriteLine("This bike has " + numGears + " gears");
